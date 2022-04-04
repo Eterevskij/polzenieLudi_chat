@@ -1,38 +1,678 @@
-.App {
-  text-align: center;
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&display=swap');
+
+.container {
+  max-width: 1312px;
+  margin: 0 auto;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+input {
+  outline: none;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+h1, h2, h3, h4, h5, h6, p {
+  margin-bottom: 0 !important;
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+body {
+  background: #F4F4F4;
+}
+
+.chat {
+  padding-bottom: 72px;
+  font-family: Inter;
+}
+
+.chat__backAndStatus__item {
+  padding: 9px 16px;
+  border-radius: 8px;
+  background-color: #fff;
+}
+
+.chat__backAndStatus__item+.chat__backAndStatus__item {
+  margin-left: 16px;
+}
+
+.chat__backAndStatus__item__circle {
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  background: #4DB663;
+}
+
+.chat__backAndStatus__item {
+  display: flex;
+  align-items: center;
+}
+
+.chat__backAndStatus__item p {
+  margin-left: 8px;
+}
+
+.chat__orderNum {
+  margin-top: 24px;
+
+  font-size: 40px;
+  font-weight: 600;
+  line-height: 52px;
+}
+
+.chat__backAndStatus__item.back {
+  cursor: pointer;
+}
+
+.chat__backAndStatus__item p {
+
+  font-size: 14px;
+  font-weight: 400;
+  line-height: 22px;
+  letter-spacing: 0px;
+  text-align: left;
+}
+
+.chat__backAndStatus__item svg {
+  width: 20px;
+  color: #2B2B2B;
+}
+
+.chat__selectPart {
+  margin-top: 56px;
+  display: inline-block;
+  padding: 8px;
+  border: 1px solid #BCBEC0;
+  border-radius: 8px;
+}
+
+.chat__selectPart__item {
+  display: inline-block;
+  padding: 12px 24px;
+  border-radius: 6px;
+
+  font-size: 16px;
+  font-weight: 600;
+  line-height: 16px;
+  color: #2B2B2B;
+}
+
+.chat__selectPart__item:hover {
+  color: #2b2b2b;
+}
+
+.chat__selectPart__item+.chat__selectPart__item {
+  margin-left: 8px;
+}
+
+.chat__selectPart__item.active {
+  background: #2B2B2B;
+  color: #fff;
+}
+
+.chat__borrowerInfo {
+  padding: 32px;
+  background: #fff;
+  border: 1px solid #EDEDED;
+  border-radius: 16px;
+}
+
+.chat__borrowerInfo__phoneWrapper,
+.chat__borrowerInfo__emailWrapper {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.chat__borrowerInfo__line {
+  margin-top: 24px;
+  width: 100%;
+  height: 1px;
+  background: #E8E8E8;
+}
+
+.chat__borrowerInfo__role {
+  color: #7a7a7a;
+
+  font-size: 14px;
+  font-weight: 400;
+  line-height: 22px;
+}
+
+.chat__borrowerInfo__name {
+
+  font-size: 16px;
+  font-weight: 600;
+  line-height: 24px;
+  color: #2B2B2B;
+}
+
+.chat__borrowerInfo__phoneWrapper,
+.chat__borrowerInfo__emailWrapper {
+  margin-top: 12px;
+  padding: 9px 16px;
+  background: #f4f4f4;
+  border-radius: 6px;
+}
+
+.chat__borrowerInfo__phone__text,
+.chat__borrowerInfo__email__text {
+
+  font-weight: 400;
+  line-height: 22px;
+  color: #2b2b2b;
+}
+
+.chat__borrowerInfo__photoNameRoleWrapper {
+  margin-top: 24px;
+}
+
+.chat__borrowerInfo__photoNameRoleWrapper__right {
+  padding-left: 12px;
+}
+
+.chat__borrowerInfo__photoNameRoleWrapper__right__role {
+  color: #7A7A7A;
+
+  font-weight: 400;
+  line-height: 22px;
+}
+
+.chat__borrowerInfo__photoNameRoleWrapper__left {
+  width: 56px;
+  height: 56px;
+  border-radius: 8px;
+}
+
+.chat__borrowerInfo__photoNameRoleWrapper__right__name {
+  color: #2b2b2b;
+
+  font-size: 16px;
+  font-weight: 600;
+  line-height: 24px;
+}
+
+.chat__borrowerInfo__button {
+  width: 100%;
+  height: 48px;
+  border-radius: 8px;
+  font-family: 'Inter';
+  font-size: 16px;
+  line-height: 24px;
+}
+
+.chat__borrowerInfo__button.send {
+  font-weight: 600;
+  border: none;
+}
+
+.chat__borrowerInfo__button.return {
+  font-weight: 500;
+  color: #2B2B2B;
+  border: 1px solid #BCBEC0;
+}
+
+.chat__borrowerInfo__button.return:hover {
+  border: 1px solid #BCBEC0;
+}
+
+.chat__borrowerInfo__button.correction svg {
+  color: #F44F5A;
+}
+
+.chat__borrowerInfo__button.correction {
+  color: #2b2b2b;
+  font-weight: 400;
+  border: none;
+  background: rgba(244, 79, 90, 0.08);
+}
+
+.chat__borrowerInfo__button {
+  margin-top: 16px;
+}
+
+.chat__borrowerInfo__button.send {
+  margin-top: 24px;
+  background: #4db663;
+  color: #fff;
+}
+
+.chat__chat {
+  padding: 32px 0 16px 32px;
+  width: 100%;
+  background: #FFFFFF;
+  border: 1px solid #EDEDED;
+  border-radius: 16px;
+
+}
+
+.chatAndBorrowerInfo {
+  margin-top: 32px;
+}
+
+.chat__chat__header {
+  margin-right: 32px;
+}
+
+.chat__chat__header__select {
+  width: 100%;
+}
+
+.chat__chat__header__search__input, .chat__chat__header__search__input:focus {
+  border: none;
+}
+
+.chat__chat__header__search {
+  padding: 8px 16px;
+  background: #F4F4F4;
+  border-radius: 8px;
+  height: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.chat__chat__header__select {
+  height: 40px;
+}
+
+.chat__chat__header__select__wrapper .ant-select-selector {
+  height: 40px !important;
+  align-items: center;
+  border-radius: 8px !important;
+  background: #F4F4F4 !important;
+}
+
+.chat__chat__header__select__wrapper .ant-select-arrow {
+  color: #4DB663;
+}
+
+.chat__chat__header__search__input {
+  background: #F4F4F4;
+  width: 100%;
+  padding-right: 10px;
+  color: #7a7a7a;
+}
+
+.chat__chat__header__search__icon {
+  color: #7A7A7A;
+}
+
+.chat__chat__header__search__input::-webkit-input-placeholder {
+  color: #7A7A7A;
+}
+
+.chat__chat__conversHistory__item.date {
+  position: relative;
+  padding-right: 32px;
+}
+
+.chat__chat__conversHistory__item.date p {
+  color: #bcbec0;
+
+  font-weight: 600;
+  line-height: 20px;
+  display: inline-block;
+  margin-left: 50%;
+  transform: translateX(-50%);
+  padding: 0 16px;
+  background: #fff;
+  z-index: 1;
+  position: relative;
+}
+
+.chat__chat__conversHistory__item__dateLine {
+  top: 50%;
+  position: absolute;
+  height: 1px;
+  width: 100%;
+  background: #E8E8E8;
+}
+
+.chat__chat__conversHistory__item {
+  margin-top: 32px;
+  position: relative;
+}
+
+.left__photo {
+  width: 48px;
+  height: 48px;
+  border-radius: 8px;
+}
+
+.chat__chat__conversHistory__item__status.green {
+  border: 1px solid #4DB663;
+  color: #4db663;
+}
+
+.chat__chat__conversHistory__item__status.orange {
+  border: 1px solid #F4B71A;
+  color: #F4B71A;
+}
+
+.chat__chat__conversHistory__item__status.red {
+  border: 1px solid #F44F5A;
+  color: #F44F5A;
+}
+
+.chat__chat__conversHistory__item__status.blue {
+  border: 1px solid #1F9BD0;
+  color: #1F9BD0;
+}
+
+.chat__chat__conversHistory__item__status {
+
+  font-weight: 600;
+  line-height: 20px;
+}
+
+.chat__chat__conversHistory__item__status {
+  display: inline-block;
+  padding: 4px 12px;
+  border-radius: 4px;
+}
+
+.chat__chat__conversHistory__item.left .message {
+  border-radius: 0px 12px 12px 12px;
+  background: #F4F4F4;
+}
+
+.chat__chat__conversHistory__item.right .message {
+  background: #4F4F4F;
+  border-radius: 12px 0px 12px 12px;
+}
+
+.chat__chat__conversHistory__item .message {
+  padding: 16px 24px;
+}
+
+.chat__chat__conversHistory__item.right .message {
+  color: #fff;
+}
+
+.chat__chat__conversHistory__item .messages {
+  display: inline-block;
+}
+
+.chat__chat__conversHistory__item__info {
+  padding-left: 16px;
+}
+
+.chat__chat__conversHistory__item:first-child {
+  margin-top: 0 !important;
+}
+
+.chat__chat__conversHistory__item .message {
+
+  font-size: 16px;
+  line-height: 24px;
+  color: #2b2b2b;
+}
+
+.chat__chat__conversHistory__item.right {
+  text-align: right;
+}
+
+.chat__chat__conversHistory__item.right .message {
+  text-align: left;
+}
+
+.djokgjd {
+  height: 100px;
+  width: 100%;
+  background: green;
+}
+
+.chat__chat__conversHistory {
+  margin-top: 30px;
+  overflow-x: hidden;
+  height: 70vh;
+  padding-bottom: 32px;
+  padding-right: 16px;
+}
+
+.messages__item {
+  position: relative;
+}
+
+.chat__chat__conversHistory::-webkit-scrollbar {
+  width: 21px;
+}
+
+.chat__chat__conversHistory::-webkit-scrollbar-track {
+  background: #fff;
+}
+
+.chat__chat__conversHistory::-webkit-scrollbar-thumb {
+  background-color: rgba(122, 122, 122, 0);
+  border-radius: 20px;
+  border: 8px solid #fff;
+}
+
+.chat__chat__conversHistory:hover::-webkit-scrollbar-thumb {
+  background-color: rgba(122, 122, 122, 1);
+}
+
+.chat__chat__inputField__wrapper {
+  padding: 16px;
+  padding-right: 32px !important;
+  border-radius: 12px;
+  padding-top: 32px;
+  padding-left: 0 !important;
+}
+
+.chat__chat {
   display: flex;
   flex-direction: column;
+  justify-content: space-between;
+}
+
+.tagCircle {
+  margin-right: 8px;
+  display: inline-block;
+  width: 12px;
+  height: 12px;
+  background: red;
+  border-radius: 50%;
+}
+
+.ant-tag {
+  background: #F4F4F4;
+  border: none;
+  padding: 9px 16px;
+  display: flex;
   align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+  width: fit-content;
+  border-radius: 6px;
 }
 
-.App-link {
-  color: #61dafb;
+.ant-tag-close-icon svg {
+  width: 20px;
+  height: 20px;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.messages {
+  position: relative;
+}
+
+.message__iconWrapper {
+  cursor: pointer;
+  position: absolute;
+  top: 50%;
+  left: -20px;
+}
+
+.message__iconWrapper img {
+  margin-left: -50%;
+}
+
+.message__iconWrapper img {
+  margin-top: -100%;
+}
+
+.chat__borrowerInfo__button.send:disabled,
+.chat__borrowerInfo__button.return:disabled {
+  opacity: 0.48;
+}
+
+.chat__borrowerInfo__button.send:disabled:hover {
+  background: #4db663;
+  color: #fff;
+}
+
+.chat__borrowerInfo__button.correction:hover {
+  color: #2b2b2b;
+  background: rgba(244, 79, 90, 0.08);
+}
+
+.roleAndTime {
+  color: #7a7a7a;
+
+}
+
+.messages__item + .chat__chat__conversHistory__item__status {
+  margin-top: 16px;
+}
+
+.status.hasDate {
+  margin-top: 32px !important;
+}
+
+.roleAndTime + .chat__chat__conversHistory__item__status  {
+  margin-top: 8px;
+}
+
+.roleAndTime.hasDate {
+  margin-top: 32px;
+  display: inline-block;
+}
+
+.roleAndTime + .message {
+  margin-top: 8px;
+}
+
+.messages {
+  margin-top: 8px;
+}
+
+.messages__item {
+  display: block;
+}
+
+.messages__item+.messages__item {
+  margin-top: 16px;
+}
+
+.chat__chat__inputField__input {
+  border: none
+}
+
+.chat__chat__inputField__buttons__item svg {
+  width: 24px;
+  height: 24px;
+  color: #7A7A7A;
+}
+
+.chat__chat__inputField__buttons__item {
+  cursor: pointer;
+}
+
+.chat__chat__inputField__buttons__item.send {
+  width: 40px;
+  height: 40px;
+  padding: 8px;
+  border: 12px;
+  background: #7A7A7A;
+  border-radius: 6px;
+}
+
+.anticon-send svg {
+  color: #fff;
+  transform: rotate(-45deg);
+}
+
+.chat__chat__inputField__buttons {
+  display: flex;
+  align-items: center;
+}
+
+.chat__chat__inputField__buttons__item+.chat__chat__inputField__buttons__item {
+  margin-left: 24px;
+}
+
+.chat__chat__inputField__input__wrapper {
+  width: 100%;
+
+}
+
+.chat__chat__inputField__input {
+  font-size: 16px;
+  color: #7a7a7a;
+
+  overflow: hidden;
+  background: transparent;
+  width: 100%;
+  height: 40px;
+  min-height: 14px;
+  max-height: 40px;
+  resize: none;
+}
+
+.chat__chat__inputField__input:focus {
+  box-shadow: none;
+}
+
+.anticon.anticon-send {
+  transform: translate(2px, -2px);
+}
+
+.chat__chat__inputField {
+  background: #f4f4f4;
+  padding: 16px;
+  border-radius: 12px;
+}
+
+.chat__chat__inputField__tags {
+  margin-top: 16px;
+  font-family: 'Inter';
+  color: #2B2B2B;
+}
+
+.chat__chat__inputField__tags .anticon-close {
+  margin-left: 16px !important;
+  color: #2B2B2B;
+}
+
+.chat__chat__inputField__tags .anticon-close svg {
+  width: 10px;
+  height: 10px;
+}
+
+.message p {
+  font-weight: 400;
+}
+
+.chat__chat__inputField__wrapper.active .chat__chat__inputField{
+  border: 1px solid #4DB663;
+  background: #fff;
+}
+
+.chat__chat__inputField__buttons__item.send {
+  background: #4DB663;
+}
+
+.chat__borrowerInfo__button.success {
+  background: #F1FAF3;
+  border: none;
+}
+
+.chat__borrowerInfo__button svg {
+  color: #4DB663;
+  width: 20px;
+  height: 20px;
+}
+
+.chat__borrowerInfo__button .anticon {
+  transform: translateY(2px);
+}
+
+.chat__borrowerInfo__button.success:hover,
+.chat__borrowerInfo__button.success:focus {
+  color: #2b2b2b;
 }
